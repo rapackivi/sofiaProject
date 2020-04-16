@@ -28,15 +28,23 @@ app.get("/contact", (req, res)=>{
   res.render("contact",{ contContent:contactContent });
 })
 
-
-
-app.post("/",(req, res)=>{
-  var quant = req.body.quant;
-  if (quant%2==0){
-    res.render("apologize");
-  } else 
-  res.send("<h1>Ваш заказ оформлен!</h1>")
+app.get("/compose", (req, res)=>{
+  res.render("compose");
 })
+
+app.post("/compose", (req, res)=>{
+  console.log(req.body.whatPost);
+  res.redirect("/compose");
+})
+
+
+// app.post("/",(req, res)=>{
+//   var quant = req.body.quant;
+//   if (quant%2==0){
+//     res.render("apologize");
+//   } else 
+//   res.send("<h1>Ваш заказ оформлен!</h1>")
+// })
 
 
 
