@@ -1,0 +1,11 @@
+<%- include("partials/header") -%>
+
+    <div class="col-md-12">
+        <h1><%= postForPage.title %></h1>
+        <p><%= postForPage.body %></p>
+        <span class="badge">
+            Posted: <%= postForPage.time.toDateString() %>, <%= postForPage.time.toTimeString() %>
+        </span>
+    </div>  
+  
+<%- include("partials/footer") -%>
