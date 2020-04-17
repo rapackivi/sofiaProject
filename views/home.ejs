@@ -2,8 +2,20 @@
 
     <% postList.forEach((post)=>{  %>
         <div class="col-md-12">
-            <h1><a href="/posts/<%= post.title %>"><%= post.title %></a></h1>
-            <p><%= post.post %></p>
+            <h1><%= post.title %></h1>
+            <% const bodyArticle = post.body;   %>
+            <% if (bodyArticle.length>100){     %>
+                <p>
+                    <%= bodyArticle.substring(0,100)+"..." %>
+                    <a href="/posts/<%= post.title %>">Read more</a>
+                </p>
+            <% } else { %>
+                <p>
+                    <%= bodyArticle %>
+                    <a href="/posts/<%= post.title %>">Read more</a>
+                </p>
+            <% } %>
+            
             <span class="badge">Posted: <%= post.time.toDateString() %>, <%= post.time.toTimeString() %></span>
         </div>  
     <% }) %>
