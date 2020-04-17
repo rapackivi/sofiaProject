@@ -24,8 +24,6 @@ app.get("/", (req, res)=>{
     startContent:homeStartingContent,
     postList : posts
    });
-   console.log("HOME ACTIVE")
-   console.log(posts);
 })
 
 app.get("/about", (req, res)=>{
@@ -50,22 +48,8 @@ app.post("/compose", (req, res)=>{
   
   posts.push(post);
 
-  console.log(posts);
-
   res.redirect("/compose");
 })
-
-
-// app.post("/",(req, res)=>{
-//   var quant = req.body.quant;
-//   if (quant%2==0){
-//     res.render("apologize");
-//   } else 
-//   res.send("<h1>Ваш заказ оформлен!</h1>")
-// })
-
-
-
 
 
 
