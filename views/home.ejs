@@ -1,6 +1,11 @@
 <%- include("partials/header") -%>
 
-<h1>HOME</h1>
-<%= startContent %>
+    <% postList.forEach((post)=>{  %>
+        <div class="col-md-12">
+            <h1><%= post.title %></h1>
+            <p><%= post.post %></p>
+            <span class="badge">Posted <%= post.time %></span>
+        </div>  
+    <% }) %>
 
 <%- include("partials/footer") -%>
